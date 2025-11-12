@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - GENERIC_TIMEZONE=Africa/Douala
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin-raptor
+      - N8N_BASIC_AUTH_PASSWORD=raptor
+      - N8N_HOST=n8n-tonnom.onrender.com      # Remplace par ton URL Render exacte
+      - N8N_PORT=5678
+      - WEBHOOK_URL=https://n8n-tonnom.onrender.com/   # Idem ici
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=dpg-d4a2foa4d50c739ojt10-a
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n_db_vxjo
+      - DB_POSTGRESDB_USER=n8n_db_vxjo_user
+      - DB_POSTGRESDB_PASSWORD=nofyQHCrKNm1OmJr0LnMDCP9NWrcROOc
